@@ -1,0 +1,30 @@
+version: "3"
+services:
+
+  wallet-backend:
+    container_name: wallet-backend
+    image: "docker.io/library/wallet:latest"
+    ports:
+      - "8080:8080"
+    networks:
+      localnet:
+        ipv4_address: 192.168.10.2
+
+  wallet-frontend:
+    container_name: wallet-fe
+      image: "docker.io/library/wallet-fe:latest"
+      ports:
+        - "80:80"
+      networks:
+        localnet:
+          ipv4_address: 192.168.10.3
+
+networks:
+  localnet:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.10.0/16
+
+
