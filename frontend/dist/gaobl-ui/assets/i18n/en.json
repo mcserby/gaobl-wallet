@@ -1,0 +1,27 @@
+{
+  "label": {
+    "nickname": "Nickname"
+  },
+  "keys": {
+    "generate": {
+      "": "Generate",
+      "title": "Generate new Keypair"
+    },
+    "upload": "Upload Private Key"
+  },
+  "wallet": {
+    "create": {
+      "": "Create",
+      "title": "Create a new Wallet"
+    }
+  },
+  "file": {
+    "dragAndDrop": {
+      "title" : {
+        "1": "Drag and Drop file here",
+        "2": "or",
+        "3": "Browse for file"
+      }
+    }
+  }
+}
