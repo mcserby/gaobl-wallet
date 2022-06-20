@@ -52,6 +52,18 @@ const start = () => {
     res.sendFile(path.join(__dirname, '../dist', APP, 'index.html'));
   });
 
+  app.use('/login', (_req, res) => {
+    res.sendFile(path.join(__dirname, '../dist', APP, 'index.html'));
+  });
+
+  app.use('/dashboard', (_req, res) => {
+    res.sendFile(path.join(__dirname, '../dist', APP, 'index.html'));
+  });
+
+  app.use('/info', (_req, res) => {
+    res.sendFile(path.join(__dirname, '../dist', APP, 'index.html'));
+  });
+
   app.use('*', (req, res) => {
     console.log('Invalid request: ', req.originalUrl);
     res.sendStatus(403);

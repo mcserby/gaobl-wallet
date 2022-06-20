@@ -19,20 +19,24 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        redirectTo: '/register',
+        redirectTo: '/dashboard',
         pathMatch: 'full'
     },
     {
         path: 'login',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2020_icon_mjs"), __webpack_require__.e("src_app_sites_login_login_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./sites/login/login.module */ 2993)).then(m => m.LoginModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2020_core_mjs"), __webpack_require__.e("default-node_modules_angular_material_fesm2020_icon_mjs"), __webpack_require__.e("common"), __webpack_require__.e("src_app_sites_login_login_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./sites/login/login.module */ 2993)).then(m => m.LoginModule)
     },
     {
         path: 'register',
-        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2020_icon_mjs"), __webpack_require__.e("src_app_sites_register_register_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./sites/register/register.module */ 2947)).then(m => m.RegisterModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2020_core_mjs"), __webpack_require__.e("default-node_modules_angular_material_fesm2020_button_mjs-node_modules_angular_material_fesm2-8dc5ff"), __webpack_require__.e("default-node_modules_angular_material_fesm2020_icon_mjs"), __webpack_require__.e("src_app_sites_register_register_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./sites/register/register.module */ 2947)).then(m => m.RegisterModule)
     },
     {
         path: 'dashboard',
-        loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_sites_dashboard_dashboard_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./sites/dashboard/dashboard.module */ 655)).then(m => m.DashboardModule)
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2020_core_mjs"), __webpack_require__.e("default-node_modules_angular_material_fesm2020_button_mjs-node_modules_angular_material_fesm2-8dc5ff"), __webpack_require__.e("common"), __webpack_require__.e("src_app_sites_dashboard_dashboard_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./sites/dashboard/dashboard.module */ 655)).then(m => m.DashboardModule)
+    },
+    {
+        path: 'info',
+        loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("default-node_modules_angular_material_fesm2020_core_mjs"), __webpack_require__.e("default-node_modules_angular_material_fesm2020_button_mjs-node_modules_angular_material_fesm2-8dc5ff"), __webpack_require__.e("src_app_sites_info_info_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ./sites/info/info.module */ 3388)).then(m => m.InfoModule)
     }
 ];
 class AppRoutingModule {
