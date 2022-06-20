@@ -1,0 +1,23 @@
+<div class="center-full">
+  <h1>{{'wallet.doTransaction.title' | translate}}</h1>
+  <form class="form" [formGroup]="transactionFormGroup" (ngSubmit)="sendTransaction()">
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>{{'label.senderWalletId' | translate}}</mat-label>
+      <input matInput formControlName="senderWalletId" required type="text">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>{{'label.receiverWalletId' | translate}}</mat-label>
+      <input matInput formControlName="recipientWalletId" required type="text">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>{{'label.amount' | translate}}</mat-label>
+      <input matInput formControlName="amount" required type="number">
+    </mat-form-field>
+
+    <button mat-flat-button color="primary" type="submit" [disabled]="transactionFormGroup.invalid">
+      {{'transaction.save' | translate}}
+    </button>
+  </form>
+</div>

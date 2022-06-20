@@ -1,0 +1,46 @@
+<mat-stepper [linear]="true"
+             orientation="vertical"
+             class="center-full"
+             *ngIf="userBlockchainSignature === ''"
+             #registerStepper>
+  <mat-step [stepControl]="userKeysForm" [editable]="false">
+    <ng-template matStepLabel>{{'keys.generate.title' | translate}}</ng-template>
+    <form [formGroup]="userKeysForm" (ngSubmit)="generateKeyPair()">
+      <input matInput formControlName="publicKey" required hidden>
+      <input matInput formControlName="privateKey" required hidden>
+      <div>
+        <button mat-flat-button color="primary" type="submit">{{'keys.generate.' | translate}}</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="walletIdForm" [editable]="false">
+    <ng-template matStepLabel>{{'wallet.create.title' | translate}}</ng-template>
+    <form [formGroup]="walletIdForm" (ngSubmit)="signWallet()">
+      <mat-form-field appearance="fill">
+        <mat-label>{{'label.nickname' | translate}}</mat-label>
+        <input matInput formControlName="nickname" placeholder="{{'label.nickname' | translate}}" value="">
+      </mat-form-field>
+      <div>
+        <button mat-flat-button color="primary" type="submit" [disabled]="walletIdForm.invalid">
+          {{'wallet.create.' | translate}}
+        </button>
+      </div>
+    </form>
+  </mat-step>
+</mat-stepper>
+
+<div class="center-full" *ngIf="userBlockchainSignature !== ''">
+  <h1>{{'wallet.save-message' | translate}}</h1>
+  <form class="userInfoDisplayForm">
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>{{'label.user.signature' | translate}}</mat-label>
+      <input matInput [value]="userSignature" [disabled]="true">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>{{'label.user.walletId' | translate}}</mat-label>
+      <input matInput [value]="userBlockchainSignature" [disabled]="true">
+    </mat-form-field>
+  </form>
+</div>
